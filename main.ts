@@ -1,11 +1,15 @@
-let numin = 0
-let numcnt = 0
+let segundos = 0
+let minutos = 0
+let horas = 0
 basic.forever(function () {
-    if (numin <= numcnt) {
-        basic.showNumber(numcnt)
-        basic.pause(1000)
-        numcnt += 1
+    if (segundos < 59) {
+        segundos = segundos + 1
     }
-    basic.showString("1:00")
-    basic.showString("1:01")
+    if (segundos == 59) {
+        minutos = minutos + 1
+    }
+    if (minutos == 59) {
+        horas = horas + 1
+        minutos = 0
+    }
 })
